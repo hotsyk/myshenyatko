@@ -1,4 +1,4 @@
-.PHONY: build run test clean
+.PHONY: build run test clean release
 
 build:
 	cargo build
@@ -12,6 +12,10 @@ ifdef TESTS
 else
 	cargo test
 endif
+
+release:
+	cargo build --release
+	@echo "Binary: target/release/myshenyatko"
 
 clean:
 	cargo clean

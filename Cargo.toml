@@ -1,7 +1,13 @@
 [package]
 name = "myshenyatko"
 version = "0.1.0"
-edition = "2024"
+edition = "2026"
+description = "TUI for managing macOS mouse, trackpad, cursor, and keyboard settings"
+license = "MIT-NORUS"
+repository = "https://github.com/vhotsyk/myshenyatko"
+readme = "README.md"
+keywords = ["macos", "mouse", "trackpad", "tui", "settings"]
+categories = ["command-line-utilities", "os::macos-apis"]
 
 [dependencies]
 anyhow = "1"
