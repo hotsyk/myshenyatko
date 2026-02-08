@@ -57,8 +57,6 @@ myshenyatko
 | `p` | Open profiles |
 | `q` | Quit |
 
-Changes are staged — nothing writes to the system until you review and apply.
-
 ### CLI
 
 ```
