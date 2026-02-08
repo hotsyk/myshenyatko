@@ -83,3 +83,7 @@ Profiles are stored as JSON in `~/.config/myshenyatko/profiles/`.
 ## License
 
 [MIT-NORUS](LICENSE)
+
+## Contributors
+- [Volodymyr Hotsyk](https://github.com/hotsyk/) - Idea and project management
+- [Claude Code](https://claude.com/product/claude-code) - Development
