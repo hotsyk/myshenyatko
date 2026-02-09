@@ -31,6 +31,7 @@ pub enum Message {
     ApplyChanges,
     CancelReview,
     SaveProfile,
+    CreateProfile,
     OpenProfiles,
     DeleteProfile,
     Back,
@@ -52,6 +53,7 @@ pub struct App {
     pub profile_selected: usize,
     pub status_message: Option<String>,
     pub input_buffer: String,
+    pub name_input_return_view: View,
 }
 
 impl App {
@@ -74,6 +76,7 @@ impl App {
             profile_selected: 0,
             status_message: None,
             input_buffer: String::new(),
+            name_input_return_view: View::Settings,
         }
     }
 
@@ -206,6 +209,14 @@ impl App {
             Message::SaveProfile => {
                 if self.view == View::Review && !self.pending_changes.is_empty() {
                     self.input_buffer.clear();
+                    self.name_input_return_view = View::Settings;
+                    self.view = View::ProfileNameInput;
+                }
+            }
+            Message::CreateProfile => {
+                if self.view == View::Profiles {
+                    self.input_buffer.clear();
+                    self.name_input_return_view = View::Profiles;
                     self.view = View::ProfileNameInput;
                 }
             }
@@ -235,7 +246,10 @@ impl App {
             Message::ConfirmInput => {
                 if self.view == View::ProfileNameInput && !self.input_buffer.is_empty() {
                     self.save_current_as_profile();
-                    self.view = View::Settings;
+                    self.view = self.name_input_return_view;
+                    if self.view == View::Profiles {
+                        self.profile_selected = 0;
+                    }
                 }
             }
         }

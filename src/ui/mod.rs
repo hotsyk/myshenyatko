@@ -93,7 +93,7 @@ fn draw_status_bar(frame: &mut Frame, app: &App, area: Rect) {
     let keybinds = match app.view {
         View::Settings => "[Tab] switch  [↑↓] navigate  [←→] adjust  [Space] toggle  [r]eview  [p]rofiles  [q]uit",
         View::Review => "[a]pply  [c]ancel  [s]ave profile  [Esc] back",
-        View::Profiles => "[↑↓] select  [Enter] apply  [d]elete  [Esc] back",
+        View::Profiles => "[↑↓] select  [Enter] apply  [n]ew  [d]elete  [Esc] back",
         View::ProfileNameInput => "[Enter] confirm  [Esc] cancel",
     };
 

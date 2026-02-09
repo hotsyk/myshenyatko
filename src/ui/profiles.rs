@@ -14,7 +14,7 @@ pub fn draw(frame: &mut Frame, app: &App, area: Rect) {
     frame.render_widget(block, area);
 
     if app.profile_names.is_empty() {
-        let msg = Paragraph::new("  No saved profiles. Save one from the review view (s).")
+        let msg = Paragraph::new("  No saved profiles. Press [n] to create one from current settings.")
             .style(Style::default().fg(Color::DarkGray));
         frame.render_widget(msg, inner);
         return;

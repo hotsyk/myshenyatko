@@ -32,6 +32,7 @@ pub fn map_key(key: KeyEvent) -> Option<Message> {
         KeyCode::Char('s') => Some(Message::SaveProfile),
         KeyCode::Char('p') => Some(Message::OpenProfiles),
         KeyCode::Char('d') => Some(Message::DeleteProfile),
+        KeyCode::Char('n') => Some(Message::CreateProfile),
         KeyCode::Esc => Some(Message::Back),
         _ => None,
     }
